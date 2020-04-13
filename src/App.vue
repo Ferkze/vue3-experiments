@@ -1,23 +1,17 @@
 <template>
-  <div>
-    <img src="./logo.png">
-    <h1>Hello Vue 3!</h1>
-    <button @click="inc">Clicked {{ count }} times.</button>
+  <div id='root'>
+    <img src='./logo.png' />
+    <div id='nav'>
+      <router-link to='/'> Home</router-link>
+      <router-link to='/contact'>Contact </router-link>
+    </div>
+    <router-view />
   </div>
 </template>
 
 <script>
-import { ref } from 'vue'
 export default {
   setup() {
-    const count = ref(0)
-    const inc = () => {
-      count.value++
-    }
-    return {
-      count,
-      inc
-    }
   }
 }
 </script>
